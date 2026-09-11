@@ -12,6 +12,7 @@
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
     "bs58": "^6.0.0",
+    "buffer": "^6.0.3",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -22,6 +23,7 @@
     "@vitejs/plugin-react": "^5.0.2",
     "typescript": "^5.9.2",
     "vite": "^7.1.5",
+    "vite-plugin-node-polyfills": "^0.24.0",
     "vitest": "^3.2.4"
   }
 }

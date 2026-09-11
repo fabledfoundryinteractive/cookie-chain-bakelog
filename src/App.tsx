@@ -8,6 +8,7 @@ import {
   type ParsedInstruction, type PartiallyDecodedInstruction,
 } from '@solana/web3.js'
 import bs58 from 'bs58'
+import { Buffer } from 'buffer'
 import { encodeReceipt, makeReceipt, parseReceipt, STATUSES } from './receipts'
 import type { BakeStatus, ChainReceipt, WalletAccount } from './types'
 
@@ -139,7 +140,7 @@ export default function App() {
         new TransactionInstruction({
           programId: MEMO_PROGRAM,
           keys: [{ pubkey: publicKey, isSigner: true, isWritable: false }],
-          data: new TextEncoder().encode(encodeReceipt(receipt)),
+          data: Buffer.from(encodeReceipt(receipt), 'utf8'),
         }),
       )
       const unsigned = transaction.serialize({ requireAllSignatures: false, verifySignatures: false })
